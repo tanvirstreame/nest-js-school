@@ -1,0 +1,16 @@
+version: '3'
+services:
+  nest-app:
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mysql
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: school
+      MYSQL_DATABASE: school
+    ports:
+      - "4406:3306"
